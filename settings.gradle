@@ -1,0 +1,4 @@
+rootProject.name = 'hexagonal'
+include 'membership_service'
+include 'membership_service'
+
