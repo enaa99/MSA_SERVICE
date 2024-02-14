@@ -1,7 +1,6 @@
 package com.membership.application.service;
 
 import com.membership.adapter.out.persistence.MembershipJpaEntity;
-import com.membership.application.port.in.FindMembershipUseCase;
 import com.membership.application.port.in.RegisterMembershipUseCase;
 import com.membership.domain.Membership;
 import com.membership.adapter.out.persistence.MembershipMapper;
