@@ -1,6 +1,7 @@
 package com.membership.adapter.in.web;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.membership.domain.Membership;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,18 +22,28 @@ class RegisterMembershipControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
-
     @Autowired
     private ObjectMapper mapper;
 
     @Test
     void registerMembership() throws Exception{
-        RegisterMembershipRequest request = new RegisterMembershipRequest();
+        RegisterMembershipRequest request = new RegisterMembershipRequest("name","email","address",true);
+
+        Membership membership = Membership.generateMembership(
+                new Membership.MembershipId("1"),
+                new Membership.MembershipName("name"),
+                new Membership.MembershipEmail("email"),
+                new Membership.MembershipAddress("address"),
+                new Membership.MembershipIsValid(true),
+                new Membership.MembershipIsCorp(true)
+        );
         mockMvc.perform(
                         MockMvcRequestBuilders.post("/membership/register")
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content(mapper.writeValueAsString(request))
                 )
-                .andExpect(MockMvcResultMatchers.status().isOk());
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.content().string(mapper.writeValueAsString(membership)));
+
     }
 }
