@@ -58,8 +58,6 @@ class FindMembershipControllerTest {
                 MockMvcRequestBuilders.get("/membership/{id}",command.getMembershipId()))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.content().string(mapper.writeValueAsString(membership)));
-
-
     }
 
     @Test
