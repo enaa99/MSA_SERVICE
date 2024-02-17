@@ -1,4 +1,5 @@
-package common;
+package msa.hexagonal.common.common;
+
 
 import org.springframework.core.annotation.AliasFor;
 import org.springframework.stereotype.Component;
@@ -9,8 +10,7 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Component
-public @interface PersistanceAdapter {
-
+public @interface UseCase {
     @AliasFor(annotation = Component.class)
     String value() default "";
 }

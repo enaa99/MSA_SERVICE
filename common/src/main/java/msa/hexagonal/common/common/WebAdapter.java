@@ -1,4 +1,4 @@
-package common;
+package msa.hexagonal.common.common;
 
 
 import org.springframework.core.annotation.AliasFor;
