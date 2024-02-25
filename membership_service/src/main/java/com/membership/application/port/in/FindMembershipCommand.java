@@ -1,10 +1,10 @@
 package com.membership.application.port.in;
 
 
-import common.SelfValidating;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import msa.hexagonal.common.common.SelfValidating;
 
 @Data
 @Builder

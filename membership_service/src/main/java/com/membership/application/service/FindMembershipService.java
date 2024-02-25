@@ -7,9 +7,9 @@ import com.membership.application.port.in.FindMembershipCommand;
 import com.membership.application.port.in.FindMembershipUseCase;
 import com.membership.application.port.out.FindMembershipPort;
 import com.membership.domain.Membership;
-import common.UseCase;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import msa.hexagonal.common.common.UseCase;
 
 @RequiredArgsConstructor
 @UseCase
