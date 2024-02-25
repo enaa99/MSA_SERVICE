@@ -4,5 +4,5 @@ import com.membership.domain.Membership;
 
 public interface RegisterMembershipUseCase {
 
-    Membership registerMembership(RegisMembershipCommand command);
+    Membership registerMembership(RegisterMembershipCommand command);
 }

@@ -1,11 +1,11 @@
 package com.membership.adapter.in.web;
 
-import com.membership.application.port.in.RegisMembershipCommand;
+import com.membership.application.port.in.RegisterMembershipCommand;
 import com.membership.application.port.in.RegisterMembershipUseCase;
 import com.membership.domain.Membership;
-import common.WebAdapter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import msa.hexagonal.common.common.WebAdapter;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,7 +25,7 @@ public class RegisterMembershipController {
         // request--> Command
         // Usecase --(requset X, command)
 
-        RegisMembershipCommand command = RegisMembershipCommand.builder()
+        RegisterMembershipCommand command = RegisterMembershipCommand.builder()
                 .name(request.getName())
                 .address(request.getAddress())
                 .email(request.getEmail())

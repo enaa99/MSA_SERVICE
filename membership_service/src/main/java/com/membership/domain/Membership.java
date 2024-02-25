@@ -1,5 +1,6 @@
 package com.membership.domain;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,7 +28,7 @@ public class Membership {
                 membershipId.valuId,
                 membershipName.valueName,
                 membershipEmail.valueEmail,
-                membershipAddress.valueEmail,
+                membershipAddress.valueAddress,
                 membershipIsValid.valueValid,
                 membershipIsCorp.valueIsCorp
         );}
@@ -56,9 +57,9 @@ public class Membership {
     }
     @Value
     public static class MembershipAddress {
-        String valueEmail;
+        String valueAddress;
         public MembershipAddress(String value) {
-            this.valueEmail = value;
+            this.valueAddress = value;
         }
     }
 

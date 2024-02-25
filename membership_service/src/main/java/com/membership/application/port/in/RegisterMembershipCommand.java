@@ -1,17 +1,17 @@
 package com.membership.application.port.in;
 
-import common.SelfValidating;
 import jakarta.validation.constraints.AssertTrue;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import msa.hexagonal.common.common.SelfValidating;
 
 @Builder
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class RegisMembershipCommand extends SelfValidating<RegisMembershipCommand> {
+public class RegisterMembershipCommand extends SelfValidating<RegisterMembershipCommand> {
 
     @NotNull
     private final String name;
@@ -24,7 +24,7 @@ public class RegisMembershipCommand extends SelfValidating<RegisMembershipComman
     private final boolean isValid;
     private final boolean isCorp;
 
-    public RegisMembershipCommand(String name, String email, String address, boolean isValid, boolean isCorp) {
+    public RegisterMembershipCommand(String name, String email, String address, boolean isValid, boolean isCorp) {
         this.name = name;
         this.email = email;
         this.address = address;

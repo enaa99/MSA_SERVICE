@@ -49,12 +49,12 @@ class FindMembershipControllerTest {
                 .membershipId(id)
                 .build();
 
-        //when, then
-        mockMvc.perform(
-                MockMvcRequestBuilders.post("/membership/register")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(mapper.writeValueAsString(request))
-        ).andExpect(MockMvcResultMatchers.status().isOk());
+        //when then
+            mockMvc.perform(
+                    MockMvcRequestBuilders.post("/membership/register")
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .content(mapper.writeValueAsString(request))
+            ).andExpect(MockMvcResultMatchers.status().isOk());
 
         mockMvc.perform(
                 MockMvcRequestBuilders.get("/membership/{id}",command.getMembershipId()))
