@@ -35,7 +35,9 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
-
+bootJar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
 docker{
     println(tasks.bootJar.outputs.files)
     name rootProject.name + '-' + project.name + ":" + version

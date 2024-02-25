@@ -5,7 +5,7 @@ plugins {
     id 'com.palantir.docker' version '0.35.0'
 }
 
-group = 'com.membership'
+group = 'com.banking'
 version = '0.0.2'
 
 java {
@@ -35,7 +35,9 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
-
+bootJar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
 docker{
     println(tasks.bootJar.outputs.files)
     name rootProject.name + '-' + project.name + ":" + version
