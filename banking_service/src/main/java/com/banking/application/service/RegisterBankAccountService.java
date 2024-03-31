@@ -2,7 +2,6 @@ package com.banking.application.service;
 
 import com.banking.adapter.out.external.bank.BankAccount;
 import com.banking.adapter.out.external.bank.GetBankAccountRequest;
-import com.banking.adapter.out.persistence.RegisteredBankAccountJpaEntity;
 import com.banking.adapter.out.persistence.RegisteredBankAccountMapper;
 import com.banking.application.port.in.RegisterBankAccountCommand;
 import com.banking.application.port.in.RegisterBankAccountUseCase;

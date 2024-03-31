@@ -7,7 +7,7 @@ import msa.hexagonal.common.common.PersistanceAdapter;
 
 @PersistanceAdapter
 @RequiredArgsConstructor
-public class RegisteredBackAccountPersistenceAdapter implements RegisterBankAccountPort {
+public class RegisteredBankAccountPersistenceAdapter implements RegisterBankAccountPort {
 
     private final SpringDataRegisteredBankAccountRepository registeredBankAccountRepository;
 

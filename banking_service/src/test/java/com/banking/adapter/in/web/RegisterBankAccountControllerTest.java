@@ -16,8 +16,6 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.web.context.WebApplicationContext;
 
 
-import static org.springframework.test.util.AssertionErrors.assertEquals;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
