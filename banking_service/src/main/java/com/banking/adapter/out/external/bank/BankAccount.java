@@ -1,7 +1,6 @@
 package com.banking.adapter.out.external.bank;
 
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 
 @Data
 public class BankAccount {
