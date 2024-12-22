@@ -3,6 +3,7 @@ package com.membership.adapter.in.web;
 import com.membership.application.port.in.ModifyMembershipCommand;
 import com.membership.application.port.in.ModifyMembershipUseCase;
 import com.membership.domain.Membership;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import msa.hexagonal.common.common.WebAdapter;
 import org.springframework.http.ResponseEntity;
@@ -13,14 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 @WebAdapter
 @RestController
 @Slf4j
+@RequiredArgsConstructor
 public class ModifyMembershipController {
 
     private final ModifyMembershipUseCase modifyMembershipUseCase;
-
-    public ModifyMembershipController(ModifyMembershipUseCase modifyMembershipUseCase) {
-        this.modifyMembershipUseCase = modifyMembershipUseCase;
-    }
-
 
     @PostMapping("/membership/modify/{membershipId}")
     ResponseEntity<Membership> modifyMembership(@RequestBody ModifyMembershipRequest request) {
