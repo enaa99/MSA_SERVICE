@@ -7,6 +7,8 @@ import com.membership.application.port.out.RegisterMembershipPort;
 import lombok.RequiredArgsConstructor;
 import msa.hexagonal.common.common.PersistanceAdapter;
 
+import java.util.Optional;
+
 @PersistanceAdapter
 @RequiredArgsConstructor
 public class MemebershipPersistenceAdapter implements RegisterMembershipPort, FindMembershipPort, ModifyMembershipPort {
@@ -28,8 +30,8 @@ public class MemebershipPersistenceAdapter implements RegisterMembershipPort, Fi
     }
 
     @Override
-    public MembershipJpaEntity findMembership(Membership.MembershipId membershipId) {
-        return membershipRepository.getReferenceById(Long.parseLong(membershipId.getValuId()));
+    public Optional<MembershipJpaEntity> findMembership(Membership.MembershipId membershipId) {
+        return membershipRepository.findById(Long.parseLong((membershipId.getValuId())));
     }
 
     @Override

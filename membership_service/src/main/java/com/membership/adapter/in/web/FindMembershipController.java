@@ -23,6 +23,7 @@ class FindMembershipController {
         FindMembershipCommand command = FindMembershipCommand.builder()
                 .membershipId(membershipId)
                 .build();
+
         return ResponseEntity.ok(findMembershipUseCase.findMembership(command));
     }
 

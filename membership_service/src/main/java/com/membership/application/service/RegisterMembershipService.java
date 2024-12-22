@@ -16,7 +16,6 @@ import org.springframework.transaction.annotation.Transactional;
 public class RegisterMembershipService implements RegisterMembershipUseCase {
 
     private final RegisterMembershipPort registerMembershipPort;
-
     private final MembershipMapper membershipMapper;
 
     @Override

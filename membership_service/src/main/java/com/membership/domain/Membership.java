@@ -1,6 +1,5 @@
 package com.membership.domain;
 
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,6 +23,7 @@ public class Membership {
         MembershipIsValid membershipIsValid,
         MembershipIsCorp membershipIsCorp
     ){
+
         return new Membership(
                 membershipId.valuId,
                 membershipName.valueName,

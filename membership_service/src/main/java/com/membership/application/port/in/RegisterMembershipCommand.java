@@ -11,7 +11,8 @@ import msa.hexagonal.common.common.SelfValidating;
 @Builder
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class RegisterMembershipCommand extends SelfValidating<RegisterMembershipCommand> {
+public class
+RegisterMembershipCommand extends SelfValidating<RegisterMembershipCommand> {
 
     @NotNull
     private final String name;
