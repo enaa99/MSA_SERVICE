@@ -35,7 +35,13 @@ public class MemebershipPersistenceAdapter implements RegisterMembershipPort, Fi
     }
 
     @Override
-    public MembershipJpaEntity modifyMembership(Membership.MembershipId membershipId, Membership.MembershipName membershipName, Membership.MembershipEmail membershipEmail, Membership.MembershipAddress membershipAddress, Membership.MembershipIsValid membershipIsValid, Membership.MembershipIsCorp membershipIsCorp) {
+    public MembershipJpaEntity modifyMembership(
+            Membership.MembershipId membershipId,
+            Membership.MembershipName membershipName,
+            Membership.MembershipEmail membershipEmail,
+            Membership.MembershipAddress membershipAddress,
+            Membership.MembershipIsValid membershipIsValid,
+            Membership.MembershipIsCorp membershipIsCorp) {
 
         MembershipJpaEntity entity = membershipRepository.getReferenceById(Long.parseLong(membershipId.getValuId()));
 

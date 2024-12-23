@@ -8,7 +8,6 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class ModifyMembershipRequest {
-    private String membershipId;
     private String name;
     private String address;
     private String email;
