@@ -1,7 +1,6 @@
 package com.membership.adapter.in.web;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.membership.application.port.in.ModifyMembershipCommand;
 import com.membership.domain.Membership;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -54,7 +53,6 @@ class ModifyMembershipControllerTest {
 
         // Modifiy MemberShip
         ModifyMembershipRequest modifyRequest = new ModifyMembershipRequest();
-        modifyRequest.setMembershipId(id);
         modifyRequest.setName("hi");
         modifyRequest.setAddress("Seoul");
         modifyRequest.setEmail("abcd@gmail.com");
@@ -63,7 +61,7 @@ class ModifyMembershipControllerTest {
 
         // when, then
         Membership membership2 = Membership.generateMembership(
-                new Membership.MembershipId(modifyRequest.getMembershipId()),
+                new Membership.MembershipId(id),
                 new Membership.MembershipName(modifyRequest.getName()),
                 new Membership.MembershipEmail(modifyRequest.getEmail()),
                 new Membership.MembershipAddress(modifyRequest.getAddress()),
@@ -72,7 +70,7 @@ class ModifyMembershipControllerTest {
         );
 
         mockMvc.perform(
-                MockMvcRequestBuilders.post("/membership/modify/{membershipId}",id)
+                MockMvcRequestBuilders.put("/membership/{membershipId}",id)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(mapper.writeValueAsString(modifyRequest))
         ).andExpect(MockMvcResultMatchers.status().isOk())
